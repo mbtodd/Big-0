@@ -23,7 +23,7 @@ export class FirstComponent implements OnInit {
   }
 
   firstFunction() {
-    alert('Hello ' + '\nWelcome to C# Corner \nFunction in First Component');
-    
+    alert('Hello ' + '\nWelcome to Typescript Corner \nFunction in First Component');
+
   }
-}    
+}
