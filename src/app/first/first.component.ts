@@ -24,6 +24,6 @@ export class FirstComponent implements OnInit {
 
   firstFunction() {
     alert('Hello ' + '\nWelcome to C# Corner \nFunction in First Component');
-    
+
   }
-}    
+}

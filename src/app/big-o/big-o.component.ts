@@ -1,7 +1,6 @@
 import { BigOService } from './../big-o.service';
 import { Component, OnInit } from '@angular/core';
-import * as faker from 'faker';
-// import * fs alias from 'fs';
+import { StepByStepComponent } from '../step_by_step/step_by_step.component';
 
 @Component({
   selector: 'app-big-o',
@@ -21,77 +20,79 @@ export class BigOComponent implements OnInit {
   // }
 
   bigOFunction() {
-    // const nemo = ['nemo'];
-    // const everyone = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank'];
-    // const large = new Array(10).fill('nemo');
+    const nemo = ['nemo'];
+    const everyone = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank' ];
+    const large = new Array(100).fill('nemo');
 
-    // const findNemo = (array) => {
-    //   let t0 = performance.now();
-    //   for (const iterator in large) {
-    //     if (array[iterator] === 'nemo') {
-    //       console.log('FOUND NEMO');
-    //       // alert('FOUND NEMO');
-    //     }
-    //   }
-    //   let t1 = performance.now();
-    //   console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
-    // };
-    // findNemo(large); //O(n) -->Linear Time
-    /* ===================================================================== */
-    const boxes = [0, 1, 2, 3, 4, 5];
+    function findNemo0(array) {
+      let t0 = performance.now();
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'nemo') {
+          console.log('Found Nemo0!');
+        }
+      }
+      let t1 = performance.now();
+      console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
+    }
 
-    let logFirstTwoBoxes = (boxes) => {
-      console.log(boxes[0]);
-      console.log(boxes[1]);
+    const findNemo = (array) => {
+      let t0 = performance.now();
+      // tslint:disable-next-line: forin
+      for (const iterator in array) {
+        console.log(array.length);
+        if (array[iterator] === 'nemo') {
+          console.log('FOUND NEMO');
+          // alert('FOUND NEMO ALERT');
+          break;
+        }
+      }
+      let t1 = performance.now();
+      console.log('Call to find Nemo took ' + (t1-t0) + ' milliseconds');
     };
 
-    logFirstTwoBoxes(boxes);
-    /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+    const findNemo2 = (array) => {
+      let t0 = performance.now();
+      array.forEach(fish => {
+        if (fish === 'nemo') {
+          console.log('Found NEMO2!');
+        }
+      });
+      let t1 = performance.now();
+      console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
+    };
 
 
-    // let s: string = faker.name.jobTitle();
-    // alert(s);
+    const findNemo3 = (array) => {
+      let t0 = performance.now();
+      for (const fish of array) {
+        if (fish === 'nemo') {
+          console.log('Found NEMO3!');
+        }
+      }
+      let t1 = performance.now();
+      console.log('Call to find Nemo took ' + (t1 - t0) + ' milliseconds');
+    };
+
+    findNemo0(everyone);
+    findNemo(everyone);
+    findNemo2(everyone);
+    findNemo3(everyone);
+
+    // const booooooooo = (n) => {
+    //   for (const iterator of n) {
+    //     console.log('booooooo');
+    //   }
+    //   // for (let i = 0; i < n.length; i++) {
+    //   //   console.log('booooooo');
+
+    //   // }
+    // };
+
+    // booooooooo([1, 2, 3, 4, 5]); //O(1)
 
 
-    /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-
-    // let firstName: string = faker.name.firstName();
-    // let lastName: string = faker.name.lastName();
-
-    // let jobTitle: string = faker.name.jobTitle();
-    // let prefix: string = faker.name.prefix();
-    // let suffix: string = faker.name.suffix();
-    // let jobArea: string = faker.name.jobArea();
-
-    // let phone: string = faker.phone.phoneNumber();
-    // tslint:disable-next-line: no-trailing-whitespace
-
-    // alert(`Employee: ${prefix} ${firstName} ${lastName} ${suffix}`);
-    // alert(`Job title: ${jobTitle}`);
-    // alert(`Job area: ${jobArea}`);
-    // alert(`Phone: ${phone}`);
   }
-
-  // generateUsers() {
-  //   let users: any = [];
-  //   for (let id = 1; id <= 100; id++) {
-  //     let firstName: string = faker.name.firstName();
-  //     let lastName: string = faker.name.lastName();
-  //     let email: string = faker.internet.email();
-
-  //     users.push({
-  //       'id': id,
-  //       'first_name': firstName,
-  //       'last_name': lastName,
-  //       'email': email
-  //     });
-  //   }
-  //   return { 'data': users }
-  // }
-
-  // let dataObj = generateUsers();
-  // fs.writeFileSync('data.json', JSON.stringify(dataObj, null, '\t'));
 
 
 }
