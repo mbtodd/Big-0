@@ -1,3 +1,4 @@
+import { StepByStepComponent } from './step_by_step/step_by_step.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'first', component: FirstComponent },
   { path: 'second', component: SecondComponent },
-  { path: 'bigO', component: BigOComponent }
+  { path: 'bigO', component: BigOComponent },
+  { path: 'stepByStep', component: StepByStepComponent }
 ];
 
 @NgModule({

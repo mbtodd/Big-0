@@ -1,5 +1,6 @@
 import { BigOService } from './../big-o.service';
 import { Component, OnInit } from '@angular/core';
+import { StepByStepComponent } from '../step_by_step/step_by_step.component';
 
 @Component({
   selector: 'app-big-o',

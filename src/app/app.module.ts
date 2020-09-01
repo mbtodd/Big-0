@@ -8,18 +8,22 @@ import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { BigOService } from './big-o.service';
 import { BigOComponent } from './big-o/big-o.component';
+import { StepByStepComponent } from './step_by_step/step_by_step.component';
+
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HomeComponent,
     FirstComponent,
     SecondComponent,
-    BigOComponent
-  ],
+    BigOComponent,
+    StepByStepComponent
+   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // StepByStepComponent
   ],
   providers: [BigOService],
   bootstrap: [AppComponent]
