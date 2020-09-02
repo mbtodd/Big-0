@@ -28,7 +28,7 @@ export class BigOComponent implements OnInit {
       let t0 = performance.now();
       for (let i = 0; i < array.length; i++) {
         if (array[i] === 'nemo') {
-          console.log('Found Nemo0!');
+          console.log('Found Nemo0!(for Loop)');
         }
       }
       let t1 = performance.now();
@@ -41,7 +41,7 @@ export class BigOComponent implements OnInit {
       for (const iterator in array) {
         console.log(array.length);
         if (array[iterator] === 'nemo') {
-          console.log('FOUND NEMO');
+          console.log('FOUND NEMO (forOf)');
           // alert('FOUND NEMO ALERT');
           break;
         }
@@ -55,7 +55,7 @@ export class BigOComponent implements OnInit {
       let t0 = performance.now();
       array.forEach(fish => {
         if (fish === 'nemo') {
-          console.log('Found NEMO2!');
+          console.log('Found NEMO2!(forEach)');
         }
       });
       let t1 = performance.now();
@@ -67,7 +67,7 @@ export class BigOComponent implements OnInit {
       let t0 = performance.now();
       for (const fish of array) {
         if (fish === 'nemo') {
-          console.log('Found NEMO3!');
+          console.log('Found NEMO3!(forOf)');
         }
       }
       let t1 = performance.now();

@@ -50,20 +50,26 @@ export class StepByStepComponent {
         const array1 = ['a', 'b', 'c', 'x'];
         const array2 = ['z', 'y', 'a'];
 
-    // array ==> obj {
-      // a: true,
-      // b: true,
-      // c: true,
-      // x: true,
-      // }
-      // array2[index] === obj.properties
-
         const containsCommonItem2 = (arr1, arr2) => {
       //  loop through first array and create object where properties === items in the array
+      let map = {};
+      // for (const i of arr1) {
+      //   if (!map[i]) {
+      //     const item = arr1[i];
+      //     map[item] = true
+      //   }
+      // }
+
+      for (let i = 0; i < arr1.length; i++) {
+        if (!map[i]) {
+          const item = arr1[i];
+          map[item] = true;
+        }
+      }
       // loop through second array and check if item in second array exists on created object.
+      console.log(map);
 
-      // O(a + b)
-      };
-    }
+    };
+        containsCommonItem2(array1, array2);
   }
-
+}
